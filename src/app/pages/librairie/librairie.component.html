@@ -1,16 +1,38 @@
 <h1>Librairie</h1>
 
 <h2>Liste des livres</h2>
-<p>
+<p class="container">
   @for (b of books; track b; let i = $index) {
-    <ul>
-      <!-- si b.isRead  est true, alors l'élément gange la classe souligne-->
-      <li [ngClass]="{'souligne' : b.isRead}">Titre : {{b.title}}</li>
-      <li>Auteur : {{b.author}}</li>
+    <ul class="card">
+      <!-- si b.isRead  est true, alors l'élément gagne la classe souligne-->
+      <p [ngClass]="{'souligne' : b.isRead}">Titre : {{b.title}}</p>
+      <p>Auteur : {{b.author}}</p>
       <!-- <li>{{b.isRead}}</li> -->
-      <li>Lu : {{ b.title | read: b.isRead }}</li>
-      <li><button (click)="toggleRead(b)">Changer le statut</button></li>
+      <p>Lu : {{ b.isRead | read }}</p>
+      <p><button class="status" (click)="toggleRead(b)">Changer le statut</button></p>
       <br>
     </ul>
   }
 </p>
+
+<h2>Ajouter un livre</h2>
+<form (ngSubmit)="addABook()">
+
+    <p>
+      <label for="title">Titre </label>
+      <input type="text" id="title" name="title" [(ngModel)]="bookadd.title">
+      @if (titleError) {
+        <small class="error">titre à remplir</small>
+      }
+    </p>
+    <p>
+      <label for="author">Auteur </label>
+      <input type="text" id="author" name="author" [(ngModel)]="bookadd.author">
+      @if(authorError) {
+        <small class="error">auteur à remplir</small>
+      }
+    </p>
+  <p>
+    <button class="submit">Ajouter</button>
+  </p>
+</form>

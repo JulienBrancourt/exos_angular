@@ -6,8 +6,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ReadPipe implements PipeTransform {
 
-  transform(value: string, read: true | false): string {
-    return read === true ? '👍' : '👎';
+  transform(bool: boolean): string {
+    return bool === true ? '👍' : '👎';
   }
 
 }

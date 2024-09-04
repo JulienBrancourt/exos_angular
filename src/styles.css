@@ -7,3 +7,7 @@ body {
 li {
   margin: 2px;
 }
+
+.error {
+  color: red;
+}

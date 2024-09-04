@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
 import { ReadPipe } from '../../utils/pipes/read.pipe';
 import { NgClass } from '@angular/common';
+import { Book } from '../../utils/types/book.type';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-librairie',
   standalone: true,
-  imports: [ReadPipe, NgClass],
+  imports: [ReadPipe, NgClass, FormsModule],
   templateUrl: './librairie.component.html',
   styleUrl: './librairie.component.css',
 })
 export class LibrairieComponent {
-
-  books = [
+  books: Book[] = [
     {
       title: '1984',
       author: 'George Orwell',
@@ -39,14 +40,33 @@ export class LibrairieComponent {
     },
   ];
 
-  read: boolean = false
-
-  setIsRead(read: true | false) {
-    this.read = read
-  }
-//  en paramètre on passe un objet book qui contient une propriété isRead de type boolean
-  toggleRead(book: { isRead: boolean; }) {
+  toggleRead(book: Book) {
     book.isRead = !book.isRead;
   }
 
+  bookadd = {
+    title: '',
+    author: '',
+    isRead: false,
+  };
+
+  isSubmitted = false;
+
+  get titleError() {
+    return this.bookadd.title.length < 1 && this.isSubmitted;
+  }
+
+  get authorError() {
+    return this.bookadd.author.length < 1 && this.isSubmitted;
+  }
+
+  addABook() {
+        this.isSubmitted = true;
+
+    if (!this.titleError && !this.authorError) {
+
+      this.books.push(this.bookadd);
+    }
+
+  }
 }

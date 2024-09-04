@@ -1,27 +1,39 @@
-# Exo1
+## Exercice 1: 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.2.
+- Créer un nouveau Angular 
+- Créer un composant "counter"
+- Intégrer le composant dans app
+- Le composant counter doit afficher un compteur, 
+- qui commence à 0
+- qui est rouge si le nombre est impair, et vert si le nombre est pair
+- qui s'incrémente ou se décrémente grâce à 2 boutons
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Exercice 2:
 
-## Code scaffolding
+- Créer un nouveau composant "Séries";
+- Créer la route du composant + la route du composant counter.
+- Créer la barre de navigation
+- Afficher ces 2 composants.
+- Dans séries, créer une liste de séries en dur.
+- Afficher la liste
+- Afficher un message si il n'y a rien dans la liste
+- Ajouter un bouton de suppression sur chaque élément de liste.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Exercice 3
 
-## Build
+- Créer un pipe personnalisé qui prend en paramétre un tableau, et une string 'order' ( 'asc', 'desc');
+- Utiliser ce pipe sur le tableau des séries pour le trier par alphabétique/
+- Ajouter 2 boutons pour modifier l'ordre du tableau (asc, desc).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Exercice 4
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Créer un composant Librairie, et sa route
+- Dans ce composant, afficher une liste de livres
+  - title
+  - author
+  - isRead
+- Quand les livres sont lus, on affiche un emoji pouce vers le haut à côté du titre 
+- + titre souligné,
+- sinon un emoji pouce vers le bas. ( Utiliser un pipe pour l'emoji )
+- Ajouter un bouton pour marquer un livre comme lu / pas lu.

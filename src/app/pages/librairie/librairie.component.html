@@ -8,6 +8,7 @@
       <li>{{b.author}}</li>
       <li>{{b.isRead}}</li>
       <li>{{ b.title | read: b.isRead }}</li>
+      <li><button (click)="toggleRead(b)">Changer le statut</button></li>
       <br>
     </ul>
   }

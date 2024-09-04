@@ -45,4 +45,8 @@ export class LibrairieComponent {
     this.read = read
   }
 
+  toggleRead(book: { isRead: boolean; }) {
+    book.isRead = !book.isRead;
+  }
+
 }

@@ -1,0 +1,15 @@
+<h1>Séries</h1>
+
+<h2>Liste de séries</h2>
+
+<ul>
+  @for(s of series | sort: order; track s; let i = $index) {
+
+    <li>{{s}} <button (click)="suppression(i)">Supprimer</button></li>
+  } @empty {
+    <p>Aucune série dans la liste</p>
+  }
+</ul>
+
+<button (click)="setOrder('asc')">ASC</button>
+<button (click)="setOrder('desc')">DESC</button>

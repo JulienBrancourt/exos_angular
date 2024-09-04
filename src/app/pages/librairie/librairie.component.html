@@ -1,0 +1,14 @@
+<h1>Librairie</h1>
+
+<h2>Liste des livres</h2>
+<p>
+  @for (b of books; track b; let i = $index) {
+    <ul>
+      <li [ngClass]="{'souligne' : b.isRead}">{{b.title}}</li>
+      <li>{{b.author}}</li>
+      <li>{{b.isRead}}</li>
+      <li>{{ b.title | read: b.isRead }}</li>
+      <br>
+    </ul>
+  }
+</p>

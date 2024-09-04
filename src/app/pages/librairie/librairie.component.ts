@@ -44,7 +44,7 @@ export class LibrairieComponent {
   setIsRead(read: true | false) {
     this.read = read
   }
-
+//  en paramètre on passe un objet book qui contient une propriété isRead de type boolean
   toggleRead(book: { isRead: boolean; }) {
     book.isRead = !book.isRead;
   }

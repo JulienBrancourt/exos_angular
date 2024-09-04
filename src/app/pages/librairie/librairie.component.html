@@ -4,6 +4,7 @@
 <p>
   @for (b of books; track b; let i = $index) {
     <ul>
+      <!-- si b.isRead  est true, alors l'élément gange la classe souligne-->
       <li [ngClass]="{'souligne' : b.isRead}">Titre : {{b.title}}</li>
       <li>Auteur : {{b.author}}</li>
       <!-- <li>{{b.isRead}}</li> -->

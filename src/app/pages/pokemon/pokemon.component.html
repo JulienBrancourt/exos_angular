@@ -1,0 +1,65 @@
+<h1>Formulaire Pokemon</h1>
+
+<section>
+ <form [formGroup]="pokemon_form" (ngSubmit)="addPokemon()">
+  <p>
+    <label for="nom">Nom</label>
+    <input type="text" id="nom" formControlName="nom">
+  </p>
+  <p>
+    <label for="description">Description</label>
+    <input type="text" id="description" formControlName="description">
+  </p>
+
+  <fieldset formArrayName="types">
+    <legend>Types</legend>
+    @for(t of pokemon_form.controls.types.controls; track t) {
+      <p>
+        <label [for]="'type' + $index">Type {{$index + 1}}</label>
+        <input [id]="'type' + $index" [formControlName]="$index">
+      </p>
+    <button type="button" (click)="addType()">Ajouter un type</button>
+    }
+  </fieldset>
+
+  <fieldset formArrayName="liste_attaques">
+    <legend>Attaques</legend>
+    @for (a of pokemon_form.controls.liste_attaques.controls; track a; let i = $index ) {
+      <fieldset formGroupName={{i}}>
+        <legend>Attaque {{i+1}}</legend>
+        <p>
+          <label for="nom_attaque">Nom de l'attaque</label>
+          <input type="text" id="nom_attaque" formControlName="nom_attaque">
+        </p>
+        <p>
+          <label for="description_attaque">Description de l'attaque</label>
+          <input type="text" id="description_attaque" formControlName="description_attaque">
+        </p>
+        <p>
+          <label for="degat_attaque">Dégâts de l'attaque</label>
+          <input type="number" id="degat_attaque" formControlName="degat_attaque">
+        </p>
+      </fieldset>
+    }
+    <button type="button" (click)="addAttaque()">Ajouter une attaque</button>
+  </fieldset>
+
+  <fieldset formGroupName="zone">
+    <legend>Zone</legend>
+    <p>
+      <label for="nom_zone">Nom</label>
+      <input type="text" id="nom_zone" formControlName="nom_zone">
+    </p>
+    <p>
+      <label for="region_zone">Région</label>
+      <input type="text" id="region_zone" formControlName="region_zone">
+    </p>
+  </fieldset>
+
+  <p><button type="submit">Ajouter un pokemon</button></p>
+</form>
+</section>
+
+<!-- <section>
+  <h2>Mes pokemons</h2>
+</section> -->

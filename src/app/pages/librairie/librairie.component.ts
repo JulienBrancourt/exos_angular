@@ -53,20 +53,22 @@ export class LibrairieComponent {
   isSubmitted = false;
 
   get titleError() {
-    return this.bookadd.title.length < 1 && this.isSubmitted;
+    return !this.bookadd.title && this.isSubmitted;
   }
 
   get authorError() {
-    return this.bookadd.author.length < 1 && this.isSubmitted;
+    return !this.bookadd.author && this.isSubmitted;
   }
 
   addABook() {
-        this.isSubmitted = true;
+    this.isSubmitted = true;
 
     if (!this.titleError && !this.authorError) {
-
       this.books.push(this.bookadd);
     }
+
+    this.isSubmitted = false;
+
 
   }
 }

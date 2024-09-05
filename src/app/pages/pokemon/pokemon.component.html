@@ -1,6 +1,7 @@
 <h1>Formulaire Pokemon</h1>
 
 <section>
+   <!--[formGroup] entre crochet car on va chercher la variable ds le typescript (data binding : on interprete du js) -->
  <form [formGroup]="pokemon_form" (ngSubmit)="addPokemon()">
   <p>
     <label for="nom">Nom</label>
@@ -25,7 +26,7 @@
   <fieldset formArrayName="liste_attaques">
     <legend>Attaques</legend>
     @for (a of pokemon_form.controls.liste_attaques.controls; track a; let i = $index ) {
-      <fieldset formGroupName={{i}}>
+      <fieldset [formGroupName]="i">
         <legend>Attaque {{i+1}}</legend>
         <p>
           <label for="nom_attaque">Nom de l'attaque</label>
@@ -60,6 +61,17 @@
 </form>
 </section>
 
-<!-- <section>
+<div>
   <h2>Mes pokemons</h2>
-</section> -->
+<div class="grille">
+  @for (p of pokemons; track p) {
+    <app-pokemon-card [pokemon]="p"></app-pokemon-card>
+  }
+</div>
+
+
+
+</div>
+
+
+

@@ -76,10 +76,15 @@ button[type="submit"] {
   margin-top: 20px;
   width: 100%;
   transition: all 0.2s ease-in;
-
 }
 
 button[type="submit"]:hover {
   background-color: #145222;
+}
+
+.grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 30px;
 }
 

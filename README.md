@@ -59,3 +59,7 @@ Créer un nouveau composant et sa route
     - nom (string)
     - region (string)
 
+## Exercice 7
+
+Reprendre les pokemons ( cf correction )
+Transformer les cartes en composant pour afficher les pokemons.

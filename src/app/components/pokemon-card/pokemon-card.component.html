@@ -5,23 +5,27 @@
   <div>
     <h4>Attaques</h4>
     @for(a of pokemon.liste_attaques; track a) {
-      <p>{{a.nom_attaque}}</p>
-      <p>{{a.description_attaque}}</p>
-      <p>{{a.degat_attaque}}</p>
+      <div>
+      <p>Nom : {{a.nom_attaque}}</p>
+      <p>Description : {{a.description_attaque}}</p>
+      <p>Dégâts : {{a.degat_attaque}}</p>
+      </div>
     }
   </div>
 
   <div>
     <h4>Types</h4>
     @for (t of pokemon.types; track t) {
-      <p>{{t}}</p>
+      <div>
+      <p class="rounded">{{t}}</p>
+      </div>
     }
   </div>
 
   <div>
     <h4>Zone</h4>
-    <p>{{pokemon.zone.nom_zone}}</p>
-    <p>{{pokemon.zone.region_zone}}</p>
+    <p>Nom : {{pokemon.zone.nom_zone}}</p>
+    <p>Région : {{pokemon.zone.region_zone}}</p>
   </div>
 
   <button (click)="deletePokemon()">Supprimer</button>

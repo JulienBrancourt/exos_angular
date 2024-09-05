@@ -28,6 +28,7 @@ export class PokemonComponent {
 
   addPokemon() {
     console.log(this.pokemon_form.value);
+    this.pokemon_form.reset();
   }
 
   addAttaque() {

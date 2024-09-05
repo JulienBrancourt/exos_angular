@@ -57,4 +57,9 @@ export class PokemonComponent {
   addType() {
     (this.pokemon_form.get('types') as FormArray).push(new FormControl(''));
   }
+
+
+  supprimerPokemon(pokemon: Pokemon) {
+    this.pokemons = this.pokemons.filter(p => p !== pokemon);
+  }
 }

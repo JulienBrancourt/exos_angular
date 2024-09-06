@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormArray, FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {Pokemon} from "../../utils/types/pokemon.type";
 import {PokemonCardComponent} from "../../components/pokemon-card/pokemon-card.component";
+import {PokedexService} from "../../utils/services/pokedex.service";
 
 @Component({
   selector: 'app-pokemon',
@@ -41,7 +42,8 @@ export class PokemonComponent {
     console.log(this.pokemon_form.value);
     this.pokemons.push(this.pokemon_form.value as Pokemon);
     localStorage.setItem('pokemons', JSON.stringify(this.pokemons));
-    this.pokemon_form.reset();
+
+
   }
 
   addAttaque() {
@@ -61,5 +63,6 @@ export class PokemonComponent {
 
   supprimerPokemon(pokemon: Pokemon) {
     this.pokemons = this.pokemons.filter(p => p !== pokemon);
+    localStorage.setItem('pokemons', JSON.stringify(this.pokemons));
   }
 }

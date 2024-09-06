@@ -2,7 +2,7 @@
   <h3>{{pokemon.nom}}</h3>
   <p>{{pokemon.description}}</p>
 
-  <div>
+  <div class="attaques">
     <h4>Attaques</h4>
     @for(a of pokemon.liste_attaques; track a) {
       <div>
@@ -28,5 +28,11 @@
     <p>Région : {{pokemon.zone.region_zone}}</p>
   </div>
 
-  <button (click)="deletePokemon()">Supprimer</button>
+  @if (this.pokedexService.pokedex.includes(pokemon)) {
+    <button (click)="deleteToPokedex(pokemon)">Supprimer du Pokedex</button>
+  } @else {
+    <button (click)="addtoPokedex(pokemon)">Ajouter au Pokedex</button>
+
+  }
+  <button (click)="deletePokemon(pokemon)">Supprimer</button>
 </article>

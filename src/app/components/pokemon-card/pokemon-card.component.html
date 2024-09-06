@@ -6,9 +6,9 @@
     <h4>Attaques</h4>
     @for(a of pokemon.liste_attaques; track a) {
       <div>
-      <p>Nom : {{a.nom_attaque}}</p>
-      <p>Description : {{a.description_attaque}}</p>
-      <p>Dégâts : {{a.degat_attaque}}</p>
+        <p>Nom : {{a.nom_attaque}}</p>
+        <p>Description : {{a.description_attaque}}</p>
+        <p>Dégâts : {{a.degat_attaque}}</p>
       </div>
     }
   </div>
@@ -17,7 +17,7 @@
     <h4>Types</h4>
     @for (t of pokemon.types; track t) {
       <div>
-      <p class="rounded">{{t}}</p>
+        <p class="rounded">{{t}}</p>
       </div>
     }
   </div>
@@ -28,11 +28,13 @@
     <p>Région : {{pokemon.zone.region_zone}}</p>
   </div>
 
-  @if (this.pokedexService.pokedex.includes(pokemon)) {
-    <button (click)="deleteToPokedex(pokemon)">Supprimer du Pokedex</button>
+  @if (view === 'global') {
+
+  <button (click)="addtoPokedex(pokemon)">Ajouter au Pokedex</button>
+  <button (click)="deletePokemon(pokemon)">Supprimer</button>
   } @else {
-    <button (click)="addtoPokedex(pokemon)">Ajouter au Pokedex</button>
+    <button (click)="deleteToPokedex(pokemon)">Supprimer du Pokedex</button>
+
 
   }
-  <button (click)="deletePokemon(pokemon)">Supprimer</button>
 </article>

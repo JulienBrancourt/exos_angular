@@ -1,5 +1,5 @@
 <h1>Mon pokedex</h1>
 
 @for (p of pokedex; track p) {
-  <app-pokemon-card [pokemon]="p" (evenement)="supprimerduPokedex($event)"></app-pokemon-card>
+  <app-pokemon-card [pokemon]="p" view="pokedex"></app-pokemon-card>
 }

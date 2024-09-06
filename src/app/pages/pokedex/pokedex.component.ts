@@ -22,9 +22,5 @@ export class PokedexComponent implements OnInit {
     this.pokedex = this.pokedexService.pokedex
   }
 
-  supprimerduPokedex(pokemon: Pokemon) {
-    this.pokedexService.pokedex = this.pokedex.filter(p => p !== pokemon)
-    localStorage.setItem('pokedex', JSON.stringify(pokemon))
-  }
 
 }

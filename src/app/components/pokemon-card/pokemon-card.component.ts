@@ -14,6 +14,9 @@ export class PokemonCardComponent {
 
 @Output() evenement = new EventEmitter();
 
+//pour savoir si on affiche ou pas le bouton du pokedex
+@Input() view: 'global' | 'pokedex' = 'global'
+
 constructor(protected pokedexService: PokedexService) { }
 
 deletePokemon(pokemon: Pokemon) {
@@ -21,10 +24,10 @@ deletePokemon(pokemon: Pokemon) {
 }
 
   addtoPokedex(pokemon: Pokemon) {
-  this.pokedexService.addPokemon(pokemon);
+  this.pokedexService.addPokemon(this.pokemon);
   }
 
   deleteToPokedex(pokemon: Pokemon) {
-  this.pokedexService.deletePokemon(pokemon);
+  this.pokedexService.deletePokemon(this.pokemon);
   }
 }

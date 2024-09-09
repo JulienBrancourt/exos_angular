@@ -1,0 +1,15 @@
+main {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+button {
+  padding: 15px;
+  border: none;
+  height: 50px;
+  width: 175px;
+  background-color: green;
+  border-radius: 45%;
+}

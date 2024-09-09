@@ -1,0 +1,12 @@
+<h1>Sacs poubelles</h1>
+
+<div class="grid">
+  @for (tb of trashbags; track tb) {
+    <div class="card">
+      <h3>{{tb.name}}</h3>
+      <p>Capacité : {{tb.capacity}}</p>
+    </div>
+  } @empty {
+    <p>Aucun sac</p>
+  }
+</div>

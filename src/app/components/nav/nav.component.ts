@@ -16,7 +16,7 @@ export class NavComponent implements OnInit{
 
   constructor(private pokedexService: PokedexService) {}
 
-  // ici nooninit permet d'effectuer des opérations de config sur le composant une fois qu'il est prêt à être utilisé, comme par exemple récupérer des données à partir d'un service ou d'une API
+  // ici ngOnInit permet d'effectuer des opérations de config sur le composant une fois qu'il est prêt à être utilisé, comme par exemple récupérer des données à partir d'un service ou d'une API
   ngOnInit() {
     this.pokedexService.pokedex$.subscribe( {
      next: (value) => this.lengthPokedex = value,

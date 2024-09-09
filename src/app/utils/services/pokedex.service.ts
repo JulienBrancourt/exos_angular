@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Pokemon } from "../types/pokemon.type";
+import {BehaviorSubject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +8,8 @@ import { Pokemon } from "../types/pokemon.type";
 export class PokedexService {
 
     pokedex: Pokemon[] = []
+
+  pokedex$ = new BehaviorSubject<number>(0);
 
   constructor() {
       const stored = localStorage.getItem('pokedex');
@@ -18,7 +21,8 @@ export class PokedexService {
   addPokemon(pokemon: Pokemon) {
       if (!this.pokedex.includes(pokemon)) {
            this.pokedex.push(pokemon)
-    localStorage.setItem('pokedex', JSON.stringify(this.pokedex));
+            localStorage.setItem('pokedex', JSON.stringify(this.pokedex));
+           this.pokedex$.next(this.pokedex.length)
       } else {
         alert('le pokemon est déjà dans le pokedex')
       }
@@ -30,6 +34,8 @@ export class PokedexService {
     if (index > -1) {
     this.pokedex.splice(index, 1)
       localStorage.setItem('pokedex', JSON.stringify(this.pokedex));
+      this.pokedex$.next(this.pokedex.length)
+
     }  else {
       alert('pas de pokemon trouvé')
     }

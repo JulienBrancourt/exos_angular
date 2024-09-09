@@ -16,6 +16,8 @@ export class PokedexComponent implements OnInit {
 
   pokedex: Pokemon[] = []
 
+  length:number = 0;
+
   constructor(private pokedexService: PokedexService) { }
 
   ngOnInit(): void {

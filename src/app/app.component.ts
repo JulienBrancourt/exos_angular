@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CounterComponent } from './pages/counter/counter.component';
 import { NavComponent } from './components/nav/nav.component';
+
 
 @Component({
   selector: 'app-root',

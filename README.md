@@ -78,3 +78,9 @@ Créer un PokedexService
 - une méthode pour vérifier si un pokemon est déjà dans le pokedex
 - Dans PokemonCard, ajouter un bouton pour ajouter au pokédex
 - Dans un composant Pokedex afficher la liste des pokemons du pokedex
+
+## Exercice 11
+
+Reprendre le pokedex :
+- Afficher dans la barre de navigation, à côté du lien vers le pokedex,
+  le nombre de pokemons qu'il y a dedans.
